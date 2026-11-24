@@ -1,4 +1,6 @@
 import silhouetteImg from "./assets/images/yefta_silhouette_bw.jpg";
+import garansiVaultImg from "./assets/images/garansivault/garansi-vault.png";
+import msRentImg from "./assets/images/ms.Rent/ms.Rent.png";
 
 const logotext = "YEFTA";
 const meta = {
@@ -144,14 +146,14 @@ const dataportfolio = [
         client: "Personal / operations tool",
         period: "Side project",
         summary:
-            "Rental operations in one place — booking workflow and equipment status instead of scattered spreadsheets.",
+            "Motorbike rental operations in one place — booking workflow, fleet tracking, and rental status instead of scattered spreadsheets.",
         role: "Builder — concept through implementation",
         stack: ["Web app"],
         highlights: [
             "Automated booking workflow",
-            "Equipment tracking for day-to-day ops",
+            "Vehicle & equipment tracking for day-to-day ops",
         ],
-        img: null,
+        img: msRentImg,
         cover: "RENT",
         link: "https://github.com/YeftaPanggabean13/missionary-rental",
         linkLabel: "View repository",
@@ -169,7 +171,7 @@ const dataportfolio = [
             "Document repository for warranties and invoices",
             "Expiry tracking and reminder-oriented alerts",
         ],
-        img: null,
+        img: garansiVaultImg,
         cover: "GV",
         link: "https://github.com/YeftaPanggabean13",
         linkLabel: "Related work on GitHub",
