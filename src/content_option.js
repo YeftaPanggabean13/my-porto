@@ -10,7 +10,7 @@ const meta = {
 const introdata = {
     title: "Yefta Panggabean",
     animated: {
-        first: "Full stack engineer",
+        first: "Software engineer",
         second: "Enterprise web systems",
         third: "Laravel · React · Next.js",
     },
@@ -86,7 +86,7 @@ const dataportfolio = [
     {
         title: "IOSS — Integrated Operational & Services System",
         client: "PT Sarana Multi Infrastruktur (via Adidata)",
-        period: "2025 — 2026",
+        period: "2026",
         summary:
             "Internal operations suite: floor-level visitor check-in, room reservation, and finance reimbursement flows with multi-tier approval.",
         role: "Fullstack developer — modules end-to-end inside a Scrum squad",
