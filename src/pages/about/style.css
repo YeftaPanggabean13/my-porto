@@ -1,107 +1,92 @@
 .sec_sp {
-    margin-bottom: calc(3rem + 5.128vw)
+    margin-bottom: calc(2.5rem + 3vw);
 }
 
-.table {
-    --bs-table-bg: transparent;
-    --bs-table-color: var(--text-color);
-    --bs-table-border-color: color-mix(in srgb, var(--text-color) 18%, transparent);
+.page_title {
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
 }
 
-.table td,
-.table th {
-    color: var(--text-color);
-    background-color: transparent;
+.section_label {
+    font-size: 1.15rem;
+    font-weight: 700;
 }
 
 .t_border {
-    border-color: var(--text-color) !important;
+    border-color: var(--line) !important;
+    opacity: 1;
+    width: 4rem;
+    margin-left: 0 !important;
 }
 
-.progress-title {
-    font-size: 16px;
-    font-weight: 700;
-    margin: 15px 0 20px;
-    font-family: 'Raleway';
+.about_copy {
+    margin: 0;
+    font-size: 1.08rem;
 }
 
-.progress {
-    height: 5px;
-    background: var(--secondary);
-    border-radius: 0;
-    box-shadow: none;
-    margin-bottom: 30px;
-    overflow: visible;
+.work_list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-.progress .progress-bar {
-    position: relative;
-    background: var(--text-color);
-    animation: animate-positive 2s;
-    overflow: visible;
-    opacity: 0.9;
+.work_item {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--line);
 }
 
-.progress .progress-value {
-    position: absolute;
-    top: -30px;
-    right: 8px;
-    font-size: 17px;
-    font-weight: bold;
-    font-style: italic;
+.work_item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.work_head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.35rem 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.work_where {
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+
+.work_detail {
+    margin: 0;
+    font-size: 0.98rem;
+}
+
+.work_date {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.82rem;
+}
+
+.skill_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.65rem;
+}
+
+.skill_list li {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.86rem;
+    padding: 0.35rem 0;
+    border-bottom: 1px solid var(--accent);
     color: var(--text-color);
 }
 
-@-webkit-keyframes animate-positive {
-    0% {
-        width: 0%;
-    }
-}
-
-@keyframes animate-positive {
-    0% {
-        width: 0%;
-    }
-}
-
-.section-title {
-    font-size: 45px;
+.service_ {
+    padding: 1rem 0 1.25rem;
 }
 
 .service__title {
-    padding: 8px 0;
-    border-bottom: solid 2px var(--secondary-color);
+    padding: 0 0 0.4rem;
+    border-bottom: 1px solid var(--line);
+    font-size: 1.05rem;
+    margin-bottom: 0.55rem;
 }
 
-.service-section .service-category-title {
-    padding-bottom: 4px;
-}
-
-
-/*! CSS Used keyframes */
-
-@-webkit-keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        -webkit-transform: translate3d(0, 100%, 0);
-        transform: translate3d(0, 100%, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
-    }
-}
-
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        -webkit-transform: translate3d(0, 100%, 0);
-        transform: translate3d(0, 100%, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
-    }
+.service_desc {
+    margin: 0;
 }

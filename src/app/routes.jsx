@@ -6,7 +6,7 @@ import { ContactUs } from "../pages/contact";
 import { About } from "../pages/about";
 import { Socialicons } from "../components/socialicons";
 
-const TRANSITION_MS = 400;
+const TRANSITION_MS = 520;
 
 function RouteView({ pathname }) {
   return (
@@ -24,13 +24,17 @@ function AnimatedRoutes() {
   const location = useLocation();
   const [pages, setPages] = useState(() => [
     {
-      className: "",
+      className: "page-shell",
       id: `${location.pathname}-initial`,
       pathname: location.pathname,
     },
   ]);
 
   useEffect(() => {
+    let enterFrame1 = 0;
+    let enterFrame2 = 0;
+    let timeout = 0;
+
     setPages((currentPages) => {
       const currentPage = currentPages[currentPages.length - 1];
 
@@ -39,7 +43,7 @@ function AnimatedRoutes() {
       }
 
       const nextPage = {
-        className: "page-enter",
+        className: "page-shell page-enter",
         id: `${location.pathname}-${Date.now()}`,
         pathname: location.pathname,
       };
@@ -47,32 +51,35 @@ function AnimatedRoutes() {
       return [
         ...currentPages.map((page) => ({
           ...page,
-          className: "page-exit",
+          className: "page-shell page-exit",
         })),
         nextPage,
       ];
     });
 
-    const frame = requestAnimationFrame(() => {
-      setPages((currentPages) =>
-        currentPages.map((page) =>
-          page.pathname === location.pathname
-            ? { ...page, className: "page-enter page-enter-active" }
-            : { ...page, className: "page-exit page-exit-active" }
-        )
-      );
+    enterFrame1 = requestAnimationFrame(() => {
+      enterFrame2 = requestAnimationFrame(() => {
+        setPages((currentPages) =>
+          currentPages.map((page) =>
+            page.pathname === location.pathname
+              ? { ...page, className: "page-shell page-enter page-enter-active" }
+              : { ...page, className: "page-shell page-exit page-exit-active" }
+          )
+        );
+      });
     });
 
-    const timeout = window.setTimeout(() => {
+    timeout = window.setTimeout(() => {
       setPages((currentPages) =>
         currentPages
           .filter((page) => page.pathname === location.pathname)
-          .map((page) => ({ ...page, className: "" }))
+          .map((page) => ({ ...page, className: "page-shell" }))
       );
     }, TRANSITION_MS);
 
     return () => {
-      cancelAnimationFrame(frame);
+      cancelAnimationFrame(enterFrame1);
+      cancelAnimationFrame(enterFrame2);
       window.clearTimeout(timeout);
     };
   }, [location.pathname]);

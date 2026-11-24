@@ -42,7 +42,7 @@ export const Socialicons = () => {
           );
         })}
       </ul>
-      <p>Follow Me</p>
+      <p>GitHub</p>
     </div>
   );
 };
